@@ -1,0 +1,29 @@
+$(document).ready(function(){
+	var height_ck=$(window).height()-36;
+	$("#main").load("admin/main.jsp");
+	$(".a2").click(function(){
+		$("#main").load("admin/allCategory.jsp");
+	});
+	$(".a1_1").click(function(){
+		$("#main").load("admin/addArticle.jsp");
+	});
+	$(".a1_2").click(function(){
+		$("#main").load("showAllArticle");
+	});
+	$(".a3").click(function(){
+		$("#main").load("admin/allAlbum.jsp");
+	});
+	$(".a4").click(function(){
+		alert("5");
+	});
+	$(".a5").click(function(){
+		$("#main").load("admin/charset.jsp");
+	});
+	$(".a9").click(function(){
+		$("#main").load("admin/main.jsp");
+	});
+	$(".ul1 li a").click(function(){
+		$(this).toggleClass("li1_a");
+	});
+	$("#menu").css("height",height_ck);
+});

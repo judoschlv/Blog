@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.objectFactory" value="spring"/>
+	<constant name="struts.configuration.xml.reload" value="true" />
+	<constant name="struts.multipart.maxSize" value="5242880"/>
+	<package name="myPackage" extends="struts-default">
+		<action name="loginAction" class="loginAction">
+			<result name="admin">/WEB-INF/index.jsp</result>
+			<result name="error">index.jsp</result>
+			<result name="*">index.jsp</result>
+		</action>
+		
+		<action name="loginAction_b" class="loginAction_b">
+			<result name="*">index.jsp</result>
+		</action>
+		
+		<action name="loginAction_c" class="loginAction_c">
+			<result name="success">/WEB-INF/index.jsp</result>
+		</action>
+		
+		<action name="loginAction_d" class="loginAction_d">
+			<result name="success">/WEB-INF/index2.jsp</result>
+		</action>
+		
+			<action name="addUser" class="addUser">
+			<result name="*">index.jsp</result>
+			<result name="error">addUser.jsp</result>
+		</action>
+		
+		<action name="addArticle" class="addArticle">
+			<result name="success">admin/addArticle.jsp</result>
+		</action>
+		
+		<action name="deleteArticle" class="deleteArticle">
+			<result name="success">admin/allArticle.jsp</result>
+		</action>
+		
+		<action name="showAllArticle" class="showAllArticle">
+			<result name="success">admin/allArticle.jsp</result>
+		</action>
+		
+		<action name="showArticle" class="showArticle">
+			<result name="success">article.jsp</result>
+		</action>
+		
+		<action name="showArticleByCat" class="showArticleByCat">
+			<result name="success">category.jsp</result>
+		</action>
+		
+		<action name="showTopTenArticle" class="showTopTenArticle">
+		</action>
+		
+		<action name="addComment" class="addComment">
+			<result name="success">article.jsp</result>
+		</action>
+		
+		<action name="deleteComment" class="deleteComment">
+			<result name="success">admin/allComment.jsp</result>
+		</action>
+		
+		<action name="showComment" class="showComment">
+			<result name="success">article.jsp</result>
+		</action>
+		
+		<action name="getAllComment" class="getAllComment">
+			<result name="success">admin/allComment.jsp</result>
+		</action>
+		
+		<action name="addAlbum" class="com.blog.action.AddAlbum">
+			<result name="success">admin/allAlbum.jsp</result>
+			<result name="error">admin/allAlbum.jsp</result>
+		</action>
+		
+		<action name="deleteAlbum" class="com.blog.action.DeleteAlbum">
+			<result name="success">admin/allAlbum.jsp</result>
+		</action>
+		
+		<action name="showAlbum" class="com.blog.action.ShowAlbum">
+		</action>
+		
+		<action name="photoUpload" class="com.blog.action.PhotoUpload">
+			<result name="success">admin/allAlbum.jsp</result>
+		</action>
+		
+		<action name="addCategory" class="addCategory">
+			<result name="success">admin/allCategory.jsp</result>
+		</action>
+		
+		<action name="showCategory" class="showCategory">
+		</action>
+		
+		<action name="showUser" class="showUser">
+		</action>
+		
+		<action name="deleteCategory" class="deleteCategory">
+			<result name="success">admin/allCategory.jsp</result>
+		</action>
+		
+		<action name="deleteUser" class="deleteUser">
+            <result name="success">admin/allUser.jsp</result>
+        </action>
+		
+		<action name="showPhoto" class="com.blog.action.ShowPhoto">
+			<result name="success">photo.jsp</result>
+		</action>
+		
+		<action name="showRss" class="showRss">
+			<result name="success">rss.xml</result>
+		</action>
+	</package>
+</struts>    

@@ -1,0 +1,302 @@
+*{
+ padding:0;
+ margin:0;
+}
+html,body {
+	font:14px/1.5 'Microsoft YaHei',arial,tahoma,ËÎÌו,sans-serif;
+	margin:0 auto;
+	height:100%;
+	background:#ffffff;
+}
+p{
+  font: italic small-caps bold 1.2em/1.0em Arial, Tahoma, Helvetica;
+}
+
+.tztxt{
+	display:block;
+	margin-top:50px;
+}
+
+#top{
+	width:100%;
+	height:6px;
+	background:#252525;
+}
+#content{
+	width:100%;
+	height:580px;
+}
+#menu{
+	float:left;
+	width:20%;
+	border:2px solid #000000;
+	background:#F6F6F6;
+}
+#main{
+	float:left;
+	width:75%;
+	height:auto;
+}
+.logo{
+	margin:0 auto;
+	width:80%;
+	padding-bottom:10px;
+}
+.logo1{
+	display:block;
+	font-family:Vijaya;
+	font-size:40px;
+	font-weight:bold;
+}
+.logo2{
+	display:block;
+	font-size:12px;
+	color:gray;
+}
+.hr1{
+	border: 0;
+	border-top: 2px solid #000;
+	border-bottom: 2px solid white;
+	border-top-color: #000;
+}
+.clear{
+	clear:both;
+}
+.link{
+	margin:0 auto;
+	width:80%;
+}
+a{
+	text-decoration:none; 	
+	color:black;
+}
+a:hover{
+	color:red;
+}
+ul{
+	list-style:none;
+}
+.a1,.a1_1,.a1_2,.a2,.a3,.a4,.a5,.a6,.a7,.a8{
+	display:block;
+	padding-left:20px;
+	padding-bottom:10px;
+	background:url("../images/control_play.gif") no-repeat;
+	line-height:18px;
+}
+.ul1{
+	margin-top:15px;
+}
+.li1_a{
+	background:url("../images/control_play2.png") no-repeat;
+}
+#footer{
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    height:30px;
+    width:100%;
+    color:gray;
+    line-height:30px;
+	font-size:12px;
+	text-align:center;
+	background:#252525;
+}
+
+* html #footer{
+    position:absolute;
+    top:expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px');
+}	
+
+#xjwz{
+	height:auto;
+	margin:10px;
+	padding:10px;
+	padding-bottom:20px;
+	background:#F6F6F6;
+	border:1px solid #ddd;
+}
+.titletxt{
+	display:block;
+	font-size:16px;
+	font-weight:bold;
+	width:100%;
+	padding-bottom:2px;
+	margin-bottom:20px;
+	border-bottom:2px solid black;
+}
+.title1{
+	color:gray;
+}
+.form_tit{
+	margin-bottom:15px;
+}
+.text1{
+	width:80%;
+	height:25px;
+	line-height:25px;
+	font-size:16px;
+}
+.text1:focus{
+	border:1px solid orange;
+}
+.btns{
+	margin-top:10px;
+}
+.btn1{
+	display:inline-block;
+	margin-right:10px;
+	outline:none;
+	border:none;
+	width:80px;
+	height:25px;
+	font-size:14px;
+	background:#ddd;
+	border:1px solid #ccc;
+}
+.btn1:hover{
+	font-weight:bold;
+}
+
+.table_article{
+	table-layout:fixed;
+	empty-cells:show;
+	border-collapse: collapse;
+	width:100%;
+}
+.table_article th{
+	border:1px solid #ccc;
+	background:#ffffff;
+}
+.table_article td{
+	border:1px solid #ccc;
+	text-align:center;
+}
+.tbcolor{
+	background:#EBF7E9;
+}
+.table_article tr:hover{
+	background:#ffeab3;
+}
+.holder{
+	margin:0 auto;
+	text-align:center;
+}
+img{
+	border:none;
+}
+
+#albumList1{
+	margin:0 auto;
+	float:left;
+	width:205px;
+	margin-right:10px;
+	margin-bottom:20px;
+}
+.album1{
+	float:left;
+	width:180px;
+	height:180px;
+	border:3px solid #ddd;
+	overflow:hidden;
+}
+.square-thumb{                   
+	width: 180px;
+	height:180px;
+}
+.de_album{
+	display:none;
+}
+.albumtxt{
+	width:180px;
+	display:block;
+	text-align:center;
+	font-weight:bold;
+	color:gray;
+}
+.form_add,#form_up{
+	border:1px solid #ccc;
+	margin-bottom:20px;
+	background:white;
+}
+.tips_album{
+	display:block;
+	width:100%;
+	text-align:center;
+	color:black;
+	font-weight:bold;
+}
+#album_left,#album_left2{
+	float:left;
+	width:70%;
+}
+#album_right{
+	float:left;
+	width:30%;
+}
+.title_album{
+	width:100%;
+	height:30px;
+	line-height:30px;
+	background:#ffffff;
+	border-bottom:1px solid #ccc;
+}
+.title_t{
+	float:left;
+	display:block;
+	width:70%;
+	padding-left:5px;
+}
+.button_add,.button_up{
+	float:right;
+	display:inline-block;
+	outline:none;
+	border:none;
+	width:50px;
+	height:25px;
+	font-size:12px;
+	margin:2px;
+	border:1px solid #ddd;
+}
+.button_add:hover,.button_up:hover{
+	font-weight:bold;
+}
+.text2{
+	width:100%;
+	height:25px;
+	line-height:25px;
+	font-size:14px;
+	margin-bottom:15px;
+}
+.text2:focus{
+	border:1px solid orange;
+}
+.nb{
+	margin:10px;
+}
+.select_album{
+	margin-top:10px;
+}
+
+#sg{
+	margin:0 auto;
+	margin-top:50px;
+	font-size:20px;
+	color:gray;
+}
+.table_category{
+	table-layout:fixed;
+	empty-cells:show;
+	border-collapse: collapse;
+	width:97%;
+}
+.table_category th{
+	border:1px solid #ccc;
+	background:#ffffff;
+}
+.table_category td{
+	border:1px solid #ccc;
+	text-align:center;
+}
+.table_category tr:hover{
+	background:#ffeab3;
+}

@@ -1,0 +1,85 @@
+*{
+ padding:0;
+ margin:0;
+}
+body {
+	font:14px/1.5 'Microsoft YaHei',arial,tahoma,ËÎÌו,sans-serif;
+	background:url(../images/body_bg.png) repeat 0 0;
+}
+#login{
+	width:25%;
+	height:auto;
+	margin:0 auto;
+	margin-top:100px;
+}
+.title{
+	height:40px;
+	background:url(../images/login_btn2.png) repeat 0 0;
+}
+.tit{
+	display:block;
+	text-align:center;
+	padding:8px 0px;
+	font-size:16px;
+	font-weight:bold;
+	color:white;
+}
+.main{
+	margin-top:10px;
+	border:1px solid #dedede;
+	background:white;
+}
+.form{
+	margin:20px;
+}
+label{
+	display:block;
+	font-size:15px;
+}
+.username,.password{
+	width:100%;
+	height:30px;
+	font-size:20px;
+	line-height:30px;
+	margin-bottom:10px;
+}
+.username:focus,.password:focus{
+	border:1px solid orange;
+}
+.txttip{
+	border:1px solid red;
+}
+.tip1,.tip2{
+	display:inline-block;
+	float:right;
+	font-size:12px;
+	color:red;
+}
+.submit{
+	width:80%;
+	height:40px;
+	margin:0 auto;
+	margin-top:10px;
+}
+.btn{
+	display:inline-block;
+	outline:none;
+	border:none;
+	width:100%;
+	height:100%;
+	color:white;
+	font-size:16px;
+	background:url(../images/login_btn1.png) repeat 0 0;
+}
+.btn:hover{
+	background:url(../images/login_btn2.png);
+	font-weight:bold;
+}
+#footer{
+	width:30%;
+	margin:0 auto;
+	margin-top:15px;
+	text-align:center;
+	color:gray;
+	font-size:12px;
+}

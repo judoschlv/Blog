@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:aop="http://www.springframework.org/schema/aop"
+         xmlns:tx="http://www.springframework.org/schema/tx"
+         xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd">
+
+
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName"
+			value="com.mysql.jdbc.Driver">
+		</property>
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/db_blog">
+		</property>
+		<property name="username" value="root"></property>
+		<property name="password" value="123456"></property>
+	</bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean"
+		destroy-method="destroy">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="annotatedPackages" value="classpath:/com/blog/po"></property>
+		<property name="annotatedClasses">
+			<list>
+				<value>com.blog.po.User</value>
+				<value>com.blog.po.Article</value>
+				<value>com.blog.po.Category</value>
+				<value>com.blog.po.Clickrate</value>
+				<value>com.blog.po.Comment</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">true</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	
+	<bean id="userDAO" class="com.blog.dao.UserDAOImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	<bean id="userService" class="com.blog.service.UserServiceImpl">
+		<property name="userDAO">
+			<ref bean="userDAO"/>
+		</property>
+	</bean>
+	
+	<bean id="addUser" class="com.blog.action.AddUser" scope="prototype">
+	    <property name="userService">
+	        <ref bean="userService"/>
+	    </property>
+	</bean>
+	
+
+	<bean id="loginAction" class="com.blog.action.LoginAction" scope="prototype">
+		<property name="userService">
+			<ref bean="userService"/>
+		</property>
+	</bean>
+
+	<bean id="loginAction_b" class="com.blog.action.LoginAction_b" scope="prototype">
+		<property name="userService">
+			<ref bean="userService"/>
+		</property>
+	</bean>
+
+	<bean id="loginAction_c" class="com.blog.action.LoginAction_c" scope="prototype">
+		<property name="userService">
+			<ref bean="userService"/>
+		</property>
+	</bean>
+	
+	<bean id="loginAction_d" class="com.blog.action.LoginAction_d" scope="prototype">
+		<property name="userService">
+			<ref bean="userService"/>
+		</property>
+	</bean>
+	
+	<bean id="articleDAO" class="com.blog.dao.ArticleDAOImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	<bean id="articleService" class="com.blog.service.ArticleServiceImpl">
+		<property name="articleDAO" ref="articleDAO"></property>
+	</bean>
+	
+	<bean id="addArticle" class="com.blog.action.AddArticle" scope="prototype">
+		<property name="articleService">
+			<ref bean="articleService"/>
+		</property>
+		<property name="categoryService">
+			<ref bean="categoryService"/>
+		</property>
+	</bean>
+	
+	<bean id="deleteArticle" class="com.blog.action.DeleteArticle" scope="prototype">
+		<property name="articleService">
+			<ref bean="articleService"/>
+		</property>
+		<property name="categoryService">
+			<ref bean="categoryService"/>
+		</property>
+	</bean>
+	
+	<bean id="showAllArticle" class="com.blog.action.ShowAllArticle" scope="prototype">
+		<property name="articleService">
+			<ref bean="articleService"/>
+		</property>
+	</bean>
+	
+
+	<bean id="showArticle" class="com.blog.action.ShowArticle" scope="prototype">
+		<property name="articleService">
+			<ref bean="articleService"/>
+		</property>
+		<property name="categoryService">
+			<ref bean="categoryService"/>
+		</property>
+		<property name="commentService">
+			<ref bean="commentService"/>
+		</property>
+		<property name="clickrateService">
+			<ref bean="clickrateService"/>
+		</property>
+	</bean>
+	
+	<bean id="showArticleByCat" class="com.blog.action.ShowArticleByCat" scope="prototype">
+		<property name="articleService">
+			<ref bean="articleService"/>
+		</property>
+		<property name="categoryService">
+			<ref bean="categoryService"/>
+		</property>
+	</bean>
+	
+	<bean id="showTopTenArticle" class="com.blog.action.ShowTopTenArticle" scope="prototype">
+		<property name="articleService">
+			<ref bean="articleService"/>
+		</property>
+	</bean>
+	
+	<bean id="commentDAO" class="com.blog.dao.CommentDAOImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	<bean id="commentService" class="com.blog.service.CommentServiceImpl">
+		<property name="commentDAO" ref="commentDAO"></property>
+	</bean>
+	
+	<bean id="addComment" class="com.blog.action.AddComment" scope="prototype">
+		<property name="commentService">
+			<ref bean="commentService"/>
+		</property>
+	</bean>
+	
+	<bean id="deleteComment" class="com.blog.action.DeleteComment" scope="prototype">
+		<property name="commentService">
+			<ref bean="commentService"/>
+		</property>
+	</bean>
+	
+	<bean id="showComment" class="com.blog.action.ShowComment" scope="prototype">
+		<property name="commentService">
+			<ref bean="commentService"/>
+		</property>
+	</bean>
+	
+	<bean id="getAllComment" class="com.blog.action.GetAllComment" scope="prototype">
+		<property name="commentService">
+			<ref bean="commentService"/>
+		</property>
+	</bean>
+	
+	<bean id="categoryDAO" class="com.blog.dao.CategoryDAOImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	<bean id="categoryService" class="com.blog.service.CategoryServiceImpl">
+		<property name="categoryDAO" ref="categoryDAO"></property>
+	</bean>
+	
+	<bean id="addCategory" class="com.blog.action.AddCategory" scope="prototype">
+		<property name="categoryService">
+			<ref bean="categoryService"/>
+		</property>
+	</bean>
+	
+	<bean id="showCategory" class="com.blog.action.ShowCategory" scope="prototype">
+		<property name="categoryService">
+			<ref bean="categoryService"/>
+		</property>
+	</bean>
+	
+	<bean id="showUser" class="com.blog.action.ShowUser" scope="prototype">
+	    <property name="userService">
+	        <ref bean="userService"/>
+	    </property>
+	</bean>
+	
+	<bean id="deleteCategory" class="com.blog.action.DeleteCategory" scope="prototype">
+		<property name="categoryService">
+			<ref bean="categoryService"/>
+		</property>
+	</bean>
+	
+	<bean id="deleteUser" class="com.blog.action.DeleteUser" scope="prototype">
+		<property name="userService">
+			<ref bean="userService"/>
+		</property>
+	</bean>
+	
+	<bean id="clickrateDAO" class="com.blog.dao.ClickrateDAOImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	<bean id="clickrateService" class="com.blog.service.ClickrateServiceImpl">
+		<property name="clickrateDAO" ref="clickrateDAO"></property>
+	</bean>
+	
+	<bean id="showRss" class="com.blog.util.ShowRss" scope="prototype">
+		<property name="articleService">
+			<ref bean="articleService"/>
+		</property>
+	</bean>
+</beans>
