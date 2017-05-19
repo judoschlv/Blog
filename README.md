@@ -3,10 +3,18 @@ Project for blog
 详见:Blog/blog设计自述.doc
 
 管理员账号/密码：admin admin
+
+
 博主账号/密码：panhao 123456          zhutao 123456
-游客账号：自行注册
+
+
+游客账号：请自行注册
+
+
 
 /* 导入myeclipse之前请务必将数据库文件导入mysql */
+
+
 
 1.引言
 
