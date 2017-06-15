@@ -23,13 +23,30 @@
 			<result name="success">/WEB-INF/index2.jsp</result>
 		</action>
 		
-			<action name="addUser" class="addUser">
+		<action name="addUser" class="addUser">
 			<result name="*">index.jsp</result>
 			<result name="error">addUser.jsp</result>
 		</action>
 		
 		<action name="addArticle" class="addArticle">
 			<result name="success">admin/addArticle.jsp</result>
+		</action>
+		
+		<action name="addFollow" class="addFollow">
+			<result name="success">fs.jsp</result>
+			<result name="self">self.jsp</result>
+			<result name="error">fa.jsp</result>
+			<result name="login">lo.jsp</result>
+		</action>
+		
+		<action name="addCollection" class="addCollection">
+			<result name="success">sc.jsp</result>
+			<result name="error">scg.jsp</result>
+			<result name="login">lo.jsp</result>
+		</action>
+		
+		<action name="updateArticleZan" class="updateArticleZan">
+			<result name="success">zan.jsp</result>
 		</action>
 		
 		<action name="deleteArticle" class="deleteArticle">
@@ -40,6 +57,18 @@
 			<result name="success">admin/allArticle.jsp</result>
 		</action>
 		
+		<action name="showAllClickrate" class="showAllClickrate">
+			<result name="success">admin/allClickrate.jsp</result>
+		</action>
+		
+		<action name="showAllArticleByHot" class="showAllArticleByHot">
+			<result name="success"></result>
+		</action>
+		
+		<action name="showAllArticleByUser" class="showAllArticleByUser">
+			<result name="success">user/allArticle2.jsp</result>
+		</action>
+		
 		<action name="showArticle" class="showArticle">
 			<result name="success">article.jsp</result>
 		</action>
@@ -48,11 +77,37 @@
 			<result name="success">category.jsp</result>
 		</action>
 		
+		<action name="showArticleByUsername" class="showArticleByUsername">
+			<result name="success">showUser.jsp</result>
+		</action>
+		
+		<action name="showFollower" class="showFollower">
+		    <result name="success">user/follower.jsp</result>
+		</action>
+		
+		<action name="showCollection" class="showCollection">
+		    <result name="success">user/collection.jsp</result>
+		</action>
+		
+		<action name="deleteCollection" class="deleteCollection">
+		    <result name="success">user/collection.jsp</result>
+		</action>
+		
+		<action name="showFollowing" class="showFollowing">
+		    <result name="success">user/following.jsp</result>
+		</action>
+		
 		<action name="showTopTenArticle" class="showTopTenArticle">
 		</action>
 		
 		<action name="addComment" class="addComment">
 			<result name="success">article.jsp</result>
+			<result name="login">lo.jsp</result>
+		</action>
+		
+		<action name="sendMessage" class="sendMessage">
+			<result name="success">index.jsp</result>
+			<result name="login">lo.jsp</result>
 		</action>
 		
 		<action name="deleteComment" class="deleteComment">
@@ -63,8 +118,20 @@
 			<result name="success">article.jsp</result>
 		</action>
 		
+		<action name="showMessage" class="showMessage">
+			<result name="success">user/message.jsp</result>
+		</action>
+		
+		<action name="deleteMessage" class="deleteMessage">
+			<result name="success">user/message.jsp</result>
+		</action>
+		
 		<action name="getAllComment" class="getAllComment">
 			<result name="success">admin/allComment.jsp</result>
+		</action>
+		
+		<action name="getAllCommentByUser" class="getAllCommentByUser">
+			<result name="success">user/allComment.jsp</result>
 		</action>
 		
 		<action name="addAlbum" class="com.blog.action.AddAlbum">
@@ -74,6 +141,10 @@
 		
 		<action name="deleteAlbum" class="com.blog.action.DeleteAlbum">
 			<result name="success">admin/allAlbum.jsp</result>
+		</action>
+		
+		<action name="deleteFollow" class="com.blog.action.DeleteFollow">
+			<result name="success">user/follow.jsp</result>
 		</action>
 		
 		<action name="showAlbum" class="com.blog.action.ShowAlbum">
@@ -99,6 +170,21 @@
 		
 		<action name="deleteUser" class="deleteUser">
             <result name="success">admin/allUser.jsp</result>
+        </action>
+		
+		<action name="updateUser" class="updateUser">
+            <result name="success">admin/allUser.jsp</result>
+        </action>
+        
+        <action name="updateUserGold" class="updateUserGold">
+            <result name="success">cs.jsp</result>
+        </action>
+        
+        <action name="showTodayClickrate" class="showTodayClickrate">
+        </action>
+        
+        <action name="updateHot" class="updateHot">
+            <result name="success">admin/allArticle.jsp</result>
         </action>
 		
 		<action name="showPhoto" class="com.blog.action.ShowPhoto">

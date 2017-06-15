@@ -98,18 +98,28 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
              
                </s:if>
                 <s:elseif test="#session.type=='博主'" >
-               <form action="loginAction_b"method="post">
+             
+                              
+        <form action="loginAction_b"method="post">
                <button type="submit" class="btn btn-primary btn-sm"><span>登出</span></button>
-               </form>
-               <h1></h1>
-               <form action="loginAction_d"method="post">
+               </form><h1></h1>
+<form action="loginAction_d"method="post">
                <button type="submit" class="btn btn-primary btn-sm"><span>管理</span></button>
-               </form>
-               </s:elseif> 
+               </form><h1></h1>
+                                
+                          
+                             </s:elseif> 
+               
+               
+               
                <s:elseif test="#session.type=='游客'" >
                <form action="loginAction_b"method="post">
                <button type="submit" class="btn btn-primary btn-sm"><span>登出</span></button>
                </form>
+               <br/>
+              <form action="loginAction_d"method="post">
+               <button type="submit" class="btn btn-primary btn-sm"><span>管理</span></button>
+               </form><h1></h1>
                </s:elseif>
                <s:else>
                 <div class="col-sm-4 subscribe-col">
@@ -179,7 +189,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		    					<div class="post-title">
 		    						<a href="showArticle?id=${art.id}" id="title_art">${art.title}</a>
 		    						<span class="art_oth">发布于：${art.datetime}&nbsp;</span>
-		    						<span class="art_oth">作者: ${art.username}</span>
+		    						<span class="art_oth">作者:<a href="showArticleByUsername?username=${art.username}">${art.username}</a></span>
 		    					</div>
 		    					<div class="clear"></div>
 	    					<div class="art_content">${art.content}</div>
@@ -195,7 +205,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		    						<a href="showArticle?id=${art.id}">${art.title}</a>
 		    					</span>
 		    					<span class="art_oth">发布于：${art.datetime}&nbsp;&nbsp;</span>
-		    					<span class="art_oth">作者: ${art.username}  </span>
+		    					<span class="art_oth">作者:<a href="showArticleByUsername?username=${art.username}">${art.username}</a> </span>
     					</div>
     				</div>
     				<div class="clear"></div>
@@ -220,13 +230,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <div class="widget col-sm-5 widget-menu">
                 <div class="row">
                     <ul class="nav column-menu white-bg">
-                        <li><a href="article.jsp">文章</a></li>
-                            <li><a href="category.jsp">分类</a></li>
+                       
+                            <li><a href="cash.jsp">充值</a></li>
                            
                             
                         </ul>
                         <ul class="nav column-menu black-bg">
-                           <li><a href="photo.jsp">相册</a></li>
+                        
                             
                             <li><a href="about.jsp">关于我</a></li>
                     </ul>
@@ -240,9 +250,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     </div>
                     <button type="submit" class="btn btn-primary btn-sm"><span>发送</span></button>
                 </form>
+               
             </div>
         </div>
-        <h5 class="copyright">Copyright Cynomys™; 2017 Blog, All Rights Reserved</a></h5>
+        <h5 class="copyright">Copyright Cynomys™; 2017 Blog, All Rights Reserved</a> <s:action name="showTodayClickrate" executeResult="true" ignoreContextParams="false"></s:action>
+    		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;今日浏览数 ${sessionScope.click}</h5>
     </div>
 </footer>
 

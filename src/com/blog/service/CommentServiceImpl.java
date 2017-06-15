@@ -40,4 +40,8 @@ public class CommentServiceImpl implements CommentService{
 		List<Comment> allComment=commentDAO.queryAll();
 		return allComment;	
 	}
+	//通过username获得指定文章的评论
+	public List<Comment> queryByUsername(String username){
+		return commentDAO.queryByUsername(username);
+	}
 }

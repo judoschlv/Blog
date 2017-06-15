@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import com.blog.po.Article;
+import com.blog.po.Comment;
 
 public class ArticleDAOImpl extends HibernateDaoSupport implements ArticleDAO{
 	//添加一篇文章
@@ -64,4 +65,35 @@ public class ArticleDAOImpl extends HibernateDaoSupport implements ArticleDAO{
 		List find = this.getHibernateTemplate().find("select count(*) from Article a where categoryid=?",categoryid);
 		return ((Long)find.get(0)).intValue();
 	}
+	
+	//根据用户名查询文章
+	@SuppressWarnings("unchecked")
+	public List queryByUser(String username){
+		List<Article> all=this.getHibernateTemplate().find
+		("select a from Article a where a.username=?",username);
+             if(all.size()>0){
+	             return all;
+             }else{
+	            return null;
+             }
+    }
+	
+	//根据ID查找是否推荐
+	@SuppressWarnings("unchecked")
+	public String queryHotByID(int id){
+		List<Article> articleList=this.getHibernateTemplate().find
+		("select a from Article a where a.id=?",id);
+             if(articleList.size()>0){
+	             return articleList.get(0).getHot();
+             }else{
+	            return null;
+             }
+	}
+	
+	//根据Hot查询所有文章
+	@SuppressWarnings("unchecked")
+	public List<Article> queryByhot(){
+			return this.getHibernateTemplate().find("select a from Article a where hot='推荐'");
+		}
+	
 }

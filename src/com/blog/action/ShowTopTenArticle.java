@@ -13,18 +13,11 @@ import com.opensymphony.xwork2.ActionSupport;
 @SuppressWarnings("serial")
 public class ShowTopTenArticle extends ActionSupport{
 	private ArticleService articleService;
-	private String username;
 	public ArticleService getArticleService() {
 		return articleService;
 	}
 	public void setArticleService(ArticleService articleService) {
 		this.articleService = articleService;
-	}
-	public String getUsername() {
-		return username;
-	}
-	public void setUsername(String username) {
-		this.username = username;
 	}
 	public String execute()throws Exception{
 		List<Article> all=articleService.queryTopTenArticle();

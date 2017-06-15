@@ -22,9 +22,10 @@ public class DeleteComment extends ActionSupport{
 	}
 	@SuppressWarnings("static-access")
 	public String execute()throws Exception{
+		System.out.println("id----------------"+id);
 		Comment comment=new Comment();
 		comment=commentService.getWYComment(id);
-		System.out.println(comment.getId());
+		System.out.println("comment--------"+comment);
 		commentService.delete(comment);
 		return this.SUCCESS;
 	}

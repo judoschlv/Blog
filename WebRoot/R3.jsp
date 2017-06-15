@@ -87,7 +87,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </div>
             <div class="col-sm-4 menu-trigger-col">
                 <button class="menu-trigger black pull-right">
-                    <span class="active-page">欢迎  </span>
+                    <span class="active-page">欢迎  ${sessionScope.username}  </span>
                     <img src="images/menu-align-dark.png" alt="" class="icon-burger">
                     <img src="images/menu-close-dark.png" alt="" class="icon-cross">
                 </button>
@@ -153,138 +153,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     				<span class="article_title">Hallo.js：一款所见即所得的Web编辑器</span>
     				<span class="article_date">作者:zouliwei&nbsp;&nbsp;发布于：2017-05-19 00:00:00&nbsp;&nbsp; 归类于：<a href="showArticleByCat?categoryid=8">前端那些事儿</a></span>	
  					<div class="article_content"><p style="margin: 0px 0px 1.5em; padding: 0px; list-style: none; text-decoration: none; color: rgb(51, 51, 51); font-family: Helvetica, Tahoma, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 24px; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); ">Hallo.js是一个简单的富文本Web编辑器，基于jQuery UI并且利用<a href="https://developer.mozilla.org/en/rich-text_editing_in_mozilla" target="_blank" style="cursor: pointer; color: rgb(0, 102, 204); text-decoration: none; ">HTML5的contentEditable</a>实现所见即所得。其目标并不是取代当今非常流行的编辑器，如<a href="http://aloha-editor.org/" target="_blank" style="cursor: pointer; color: rgb(0, 102, 204); text-decoration: none; ">Aloha</a>，而是给开发者提供一种更简单、更愉快的用户编辑体验。</p><p style="margin: 0px 0px 1.5em; padding: 0px; list-style: none; text-decoration: none; color: rgb(51, 51, 51); font-family: Helvetica, Tahoma, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 24px; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); ">Hallo.js是由Henri Bergius为IKS项目开发的一款免费软件，使用CoffeeScript开发，遵循MIT许可协议，托管在<a href="https://github.com/bergie/hallo" target="_blank" style="cursor: pointer; color: rgb(0, 102, 204); text-decoration: none; ">GitHub</a>上。</p><p style="margin: 0px 0px 1.5em; padding: 0px; list-style: none; text-decoration: none; color: rgb(51, 51, 51); font-family: Helvetica, Tahoma, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 24px; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-align: center; "><a href="http://cms.csdnimg.cn/article/201307/18/51e7b613df45c.jpg" target="_blank" style="cursor: pointer; color: rgb(0, 102, 204); text-decoration: none; "><img src="http://cms.csdnimg.cn/article/201307/18/51e7b613df45c.jpg" style="vertical-align: middle; border: none; width: 475.26132404181186px; height: 220px; " border="0" alt="" /></a><br /></p><p style="margin: 0px 0px 1.5em; padding: 0px; list-style: none; text-decoration: none; color: rgb(51, 51, 51); font-family: Helvetica, Tahoma, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 24px; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); ">官网：<a href="http://hallojs.org/" style="cursor: pointer; color: rgb(0, 102, 204); text-decoration: none; ">http://hallojs.org/</a></p><p style="margin: 0px 0px 1.5em; padding: 0px; list-style: none; text-decoration: none; color: rgb(51, 51, 51); font-family: Helvetica, Tahoma, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 24px; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); ">托管地址及教程：<a href="https://github.com/bergie/hallo" style="cursor: pointer; color: rgb(0, 102, 204); text-decoration: none; ">https://github.com/bergie/hallo</a></p>
- 						<center> <button type="submit" class="btn btn-primary btn-sm"><span>关注</span></button>
- 						  <button type="submit" class="btn btn-primary btn-sm"><span>点赞</span></button></center>
- 					</div>
- 					<div class="comment">
- 						<span class="txt_c">共0条评论</span>
-	    				<form action="addComment" method="POST" class="form_comment">
-	    					<textarea name="content" class="xheditor-mini"></textarea>
-	    					<div class="tijiao">
-		    					<input type="submit" value="提交" class="btn_comment" id="comment_sub"/>
-		    					<input type="reset" value="重置" class="btn_comment"/>
-		    				</div>
-		    				<input type="text" name="aid" class="comment_aid" value="8" style="visibility:hidden"/>
-	    				</form>
-	    				<div class="clear"></div>
-	    				
-	    			</div>
-	    			
+ 						 					</div>
+ 						    			
     			</div>
     			    
     		</div>		
     		
 
 			
-  				
-  				
-    		<div id="main_right">
-    			
-    		
-    			<div class="ck_right">
-    				<span class="title_right">文章分类</span>
-    				<ul>
-	    				
-	    					<li>
-	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
-	    						<a href="showArticleByCat?categoryid=3" class="link_a">java学习（4）</a>
-	    					</li>
-	    				
-	    					<li>
-	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
-	    						<a href="showArticleByCat?categoryid=4" class="link_a">随笔（0）</a>
-	    					</li>
-	    				
-	    					<li>
-	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
-	    						<a href="showArticleByCat?categoryid=5" class="link_a">关于工作（0）</a>
-	    					</li>
-	    				
-	    					<li>
-	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
-	    						<a href="showArticleByCat?categoryid=6" class="link_a">关于生活（0）</a>
-	    					</li>
-	    				
-	    					<li>
-	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
-	    						<a href="showArticleByCat?categoryid=7" class="link_a">jquery（1）</a>
-	    					</li>
-	    				
-	    					<li>
-	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
-	    						<a href="showArticleByCat?categoryid=8" class="link_a">前端那些事儿（2）</a>
-	    					</li>
-	    				
-	    					<li>
-	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
-	    						<a href="showArticleByCat?categoryid=9" class="link_a">博主介绍（2）</a>
-	    					</li>
-	    				
-    				</ul>
-    			</div>
-    			
-    			<div class="ck_right">
-    				<span class="title_right">博客相册</span>
-    				<ul>
-    						
-	    					<li>
-	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
-	    						<a href="showPhoto?albumname=none" class="link_a">none</a>
-	    					</li>
-	    				
-    				</ul>
-    			</div>    		
-    			
-    			<div class="ck_right">
-    				<span class="title_right">最新文章</span>
-    				<ul>
-    						
-	    					<li>
-	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
-	    						<a href="showArticle?id=11" class="link_a">让代码飞一会儿，超级有用的CSS编码工具集</a>
-	    					</li>
-	    					
-	    					<li>
-	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
-	    						<a href="showArticle?id=10" class="link_a">[简讯]jQuery 1.7.2正式版发布！</a>
-	    					</li>
-	    					
-	    					<li>
-	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
-	    						<a href="showArticle?id=9" class="link_a">10款最佳CSS/jQuery开源图片说明</a>
-	    					</li>
-	    					
-	    					<li>
-	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
-	    						<a href="showArticle?id=8" class="link_a">Hallo.js：一款所见即所得的Web编辑器</a>
-	    					</li>
-	    					
-	    					<li>
-	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
-	    						<a href="showArticle?id=7" class="link_a">Java EE 8愿望清单：缺少这些，Java EE将不会完美</a>
-	    					</li>
-	    					
-	    					<li>
-	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
-	    						<a href="showArticle?id=6" class="link_a">提升网站知名度的方法</a>
-	    					</li>
-	    					
-	    					<li>
-	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
-	    						<a href="showArticle?id=3" class="link_a">小雪</a>
-	    					</li>
-	    					
-	    					<li>
-	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
-	    						<a href="showArticle?id=2" class="link_a">小童</a>
-	    					</li>
-	    					
-	    					<li>
-	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
-	    						<a href="showArticle?id=1" class="link_a">小等</a>
-	    					</li>
-	    				
-    				</ul>
+  
     			</div> 	
     		</div>
 
@@ -295,7 +172,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </div>
       
     <div class="clear"></div>
-    <div id="footer">Copyright Cynomys™; 2017 Blog, All Rights Reserved</div>
+
 	<div id="tbox">
 		<a id="gotop" href="javascript:void(0)" title="回到顶部"></a>
 	</div>

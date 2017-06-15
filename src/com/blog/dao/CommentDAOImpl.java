@@ -30,7 +30,7 @@ public class CommentDAOImpl extends HibernateDaoSupport implements CommentDAO {
 	@SuppressWarnings("unchecked")
 	public Comment queryById(int id){
 		List<Comment> allList=this.getHibernateTemplate().find
-				("select c fom Comment c where id=?",id);
+				("select c from Comment c where id=?",id);
 		if(allList.size()>0){
 			return allList.get(0);
 		}else{
@@ -48,5 +48,16 @@ public class CommentDAOImpl extends HibernateDaoSupport implements CommentDAO {
 	@SuppressWarnings("unchecked")
 	public List<Comment> queryAll(){
 		return this.getHibernateTemplate().find("select c from Comment c");
+	}
+	
+	//通过username获得指定文章的评论
+	public List<Comment> queryByUsername(String username){
+		List<Comment> allList=this.getHibernateTemplate().find
+		      ("select c from Comment c where c.username=?",username);
+                      if(allList.size()>0){
+	                      return allList;
+                      }else{
+                          return null;
+                      }
 	}
 }

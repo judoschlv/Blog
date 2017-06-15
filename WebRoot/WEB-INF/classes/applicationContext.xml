@@ -14,7 +14,7 @@
 			value="com.mysql.jdbc.Driver">
 		</property>
 		<property name="url"
-			value="jdbc:mysql://localhost:3306/db_blog">
+			value="jdbc:mysql://localhost:3306/db_blog?useUnicode=true&amp;characterEncoding=UTF-8">
 		</property>
 		<property name="username" value="root"></property>
 		<property name="password" value="123456"></property>
@@ -31,6 +31,9 @@
 				<value>com.blog.po.Category</value>
 				<value>com.blog.po.Clickrate</value>
 				<value>com.blog.po.Comment</value>
+				<value>com.blog.po.Follow</value>
+				<value>com.blog.po.Message</value>
+				<value>com.blog.po.Collection</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
@@ -113,6 +116,9 @@
 		<property name="categoryService">
 			<ref bean="categoryService"/>
 		</property>
+		<property name="collectionService">
+			<ref bean="collectionService"/>
+		</property>
 	</bean>
 	
 	<bean id="showAllArticle" class="com.blog.action.ShowAllArticle" scope="prototype">
@@ -121,7 +127,25 @@
 		</property>
 	</bean>
 	
-
+	<bean id="showAllClickrate" class="com.blog.action.ShowAllClickrate" scope="prototype">
+		<property name="clickrateService">
+			<ref bean="clickrateService"/>
+		</property>
+	</bean>
+	
+	
+	<bean id="showAllArticleByHot" class="com.blog.action.ShowAllArticleByHot" scope="prototype">
+		<property name="articleService">
+			<ref bean="articleService"/>
+		</property>
+	</bean>
+	
+	<bean id="showAllArticleByUser" class="com.blog.action.ShowAllArticleByUser" scope="prototype">
+		<property name="articleService">
+			<ref bean="articleService"/>
+		</property>
+	</bean>
+	
 	<bean id="showArticle" class="com.blog.action.ShowArticle" scope="prototype">
 		<property name="articleService">
 			<ref bean="articleService"/>
@@ -143,6 +167,18 @@
 		</property>
 		<property name="categoryService">
 			<ref bean="categoryService"/>
+		</property>
+	</bean>
+	
+	<bean id="showArticleByUsername" class="com.blog.action.ShowArticleByUsername" scope="prototype">
+		<property name="articleService">
+			<ref bean="articleService"/>
+		</property>
+		<property name="userService">
+			<ref bean="userService"/>
+		</property>
+		<property name="followService">
+			<ref bean="followService"/>
 		</property>
 	</bean>
 	
@@ -184,6 +220,12 @@
 		</property>
 	</bean>
 	
+	<bean id="getAllCommentByUser" class="com.blog.action.GetAllCommentByUser" scope="prototype">
+		<property name="commentService">
+			<ref bean="commentService"/>
+		</property>
+	</bean>
+	
 	<bean id="categoryDAO" class="com.blog.dao.CategoryDAOImpl">
 		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
 	</bean>
@@ -220,6 +262,142 @@
 		<property name="userService">
 			<ref bean="userService"/>
 		</property>
+		<property name="followService">
+			<ref bean="followService"/>
+		</property>
+	</bean>
+	
+	<bean id="updateUser" class="com.blog.action.UpdateUser" scope="prototype">
+		<property name="userService">
+			<ref bean="userService"/>
+		</property>
+	</bean>
+	
+	<bean id="updateArticleZan" class="com.blog.action.UpdateArticleZan" scope="prototype">
+		<property name="articleService">
+			<ref bean="articleService"/>
+		</property>
+	</bean>
+	
+	<bean id="updateUserGold" class="com.blog.action.UpdateUserGold" scope="prototype">
+		<property name="userService">
+			<ref bean="userService"/>
+		</property>
+	</bean>
+	
+	
+	<bean id="updateHot" class="com.blog.action.UpdateHot" scope="prototype">
+		<property name="articleService">
+			<ref bean="articleService"/>
+		</property>
+	</bean>
+	
+	<bean id="followDAO" class="com.blog.dao.FollowDAOImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	<bean id="followService" class="com.blog.service.FollowServiceImpl">
+		<property name="followDAO">
+			<ref bean="followDAO"/>
+		</property>
+	</bean>
+	
+	<bean id="addFollow" class="com.blog.action.AddFollow" scope="prototype">
+		<property name="followService">
+			<ref bean="followService"/>
+		</property>
+		<property name="userService">
+			<ref bean="userService"/>
+		</property>
+	</bean>
+	
+	<bean id="addCollection" class="com.blog.action.AddCollection" scope="prototype">
+		<property name="collectionService">
+			<ref bean="collectionService"/>
+		</property>
+	</bean>
+	
+	<bean id="showFollower" class="com.blog.action.ShowFollower" scope="prototype">
+		<property name="followService">
+			<ref bean="followService"/>
+		</property>
+		<property name="userService">
+			<ref bean="userService"/>
+		</property>
+	</bean>
+	
+	<bean id="showFollowing" class="com.blog.action.ShowFollowing" scope="prototype">
+		<property name="followService">
+			<ref bean="followService"/>
+		</property>
+		<property name="userService">
+			<ref bean="userService"/>
+		</property>
+	</bean>
+	
+	<bean id="deleteFollow" class="com.blog.action.DeleteFollow" scope="prototype">
+		<property name="followService">
+			<ref bean="followService"/>
+		</property>
+	</bean>
+	
+		<bean id="messageDAO" class="com.blog.dao.MessageDAOImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	<bean id="messageService" class="com.blog.service.MessageServiceImpl">
+		<property name="messageDAO">
+			<ref bean="messageDAO"/>
+		</property>
+	</bean>
+	
+	<bean id="sendMessage" class="com.blog.action.SendMessage" scope="prototype">
+	    <property name="messageService">
+	        <ref bean="messageService"/>
+	    </property>
+	</bean>
+	
+	<bean id="showTodayClickrate" class="com.blog.action.ShowTodayClickrate" scope="prototype">
+	    <property name="clickrateService">
+	        <ref bean="clickrateService"/>
+	    </property>
+	</bean>
+	
+	<bean id="showMessage" class="com.blog.action.ShowMessage" scope="prototype">
+	    <property name="messageService">
+	        <ref bean="messageService"/>
+	    </property>
+	</bean>
+	
+	<bean id="deleteMessage" class="com.blog.action.DeleteMessage" scope="prototype">
+	    <property name="messageService">
+	        <ref bean="messageService"/>
+	    </property>
+	</bean>
+	
+	<bean id="collectionDAO" class="com.blog.dao.CollectionDAOImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	<bean id="collectionService" class="com.blog.service.CollectionServiceImpl">
+		<property name="collectionDAO">
+			<ref bean="collectionDAO"/>
+		</property>
+	</bean>
+	
+	<bean id="showCollection" class="com.blog.action.ShowCollection" scope="prototype">
+		<property name="collectionService">
+			<ref bean="collectionService"/>
+		</property>
+		<property name="articleService">
+			<ref bean="articleService"/>
+		</property>
+	</bean>
+	
+	<bean id="deleteCollection" class="com.blog.action.DeleteCollection" scope="prototype">
+	    <property name="collectionService">
+	        <ref bean="collectionService"/>
+	    </property>
 	</bean>
 	
 	<bean id="clickrateDAO" class="com.blog.dao.ClickrateDAOImpl">

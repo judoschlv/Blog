@@ -3,6 +3,7 @@
 			<s:action name="showTopTenArticle" executeResult="true" ignoreContextParams="false"></s:action>
   			<s:action name="showCategory" executeResult="true" ignoreContextParams="false"></s:action>	
   			<s:action name="showAlbum" executeResult="true" ignoreContextParams="false"></s:action>	
+  			<s:action name="showAllArticleByHot" executeResult="true" ignoreContextParams="false"></s:action>
     		<div id="main_right">
     			
     		
@@ -41,5 +42,18 @@
 	    				</s:iterator>
     				</ul>
     			</div> 	
+    			
+    			<div class="ck_right">
+    				<span class="title_right">推荐文章</span>
+    				<ul>
+    					<s:iterator value="#request.allArticleByHot" var="hotArticle">	
+	    					<li>
+	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
+	    						<a href="showArticle?id=${hotArticle.id}" class="link_a">${hotArticle.title}</a>
+	    					</li>
+	    				</s:iterator>
+    				</ul>
+    			</div> 	
+    			
     		</div>
 

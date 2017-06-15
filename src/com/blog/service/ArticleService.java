@@ -30,4 +30,13 @@ public interface ArticleService {
 	public List<Article> queryByCate(int categoryid);
 	
 	public int queryAllCountByCat(int categoryid);
+	
+	//按用户查询文章
+	public List<Article> queryByUser(String username);
+	
+	//根据ID查找是否推荐
+	public String queryHotByID(int id);
+	
+	//根据Hot查询所有文章
+	public List<Article> queryByhot();
 }

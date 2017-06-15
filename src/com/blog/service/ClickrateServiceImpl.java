@@ -1,6 +1,7 @@
 package com.blog.service;
 
 import java.util.Date;
+import java.util.List;
 
 import com.blog.dao.ClickrateDAO;
 import com.blog.po.Clickrate;
@@ -27,5 +28,15 @@ public class ClickrateServiceImpl implements ClickrateService{
 			clickrateDAO.add(cl);
 			return false;
 		}
+	}
+	
+	//按查询所有文章
+	public List<Clickrate> queryAllClickrate(){
+		return clickrateDAO.queryAllClickrate();
+	}
+	
+	//按time查询访问
+	public List<Clickrate> queryByTime(Date time){
+		return clickrateDAO.queryByTime(time);
 	}
 }

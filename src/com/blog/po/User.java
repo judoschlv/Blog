@@ -6,13 +6,26 @@ import javax.persistence.*;
 @Table(name="user")
 public class User {
 	@Id
+	private int id;
 	private String username;
 	private String password;
 	private String nickname;
 	private String blogtitle;
 	private String idiograph;
 	private String type;
-	
+	private int gold;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public int getGold() {
+		return gold;
+	}
+	public void setGold(int gold) {
+		this.gold = gold;
+	}
 	public String getType() {
 		return type;
 	}

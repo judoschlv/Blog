@@ -22,14 +22,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			perPage : 15,
       		delay : 15
 		});
-		function deleteArt(id,i){
+		function deleteMessage(id){
 			$.ajax({
-				url:"deleteArticle?id="+id,
+				url:"deleteMessage?id="+id,
 				type:"post",
 				async: false,
 				success:function(){
 					alert("删除成功!");
-					$("#itemContainer tr:eq(" + i + ")").fadeOut(1000);
 				}
 			});
 		}
@@ -38,35 +37,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     <div id="xjwz">
-  		<span class="titletxt">所有文章</span>
+  		<span class="titletxt">留言管理</span>
   		
 	    <div class="articleList">
 	    	<table class="table_article">
 	    		<tr>
-	    			<th  width="8%">序号</th>
-	    			<th  width="35%">标题</th>
-	    			<th  width="20%">发布时间</th>
-	    			<th  width="11%">所属分类</th>
-	    			<th  width="8%">评论量</th>
-	    			<th  width="8%">点击量</th>
-	    			<th  width="10%">操作</th>
+	    			
+	    			<th  width="20%"><center>用户名</center></th>
+	    			<th  width="70%"><center>内容</center></th>
+	    			<th  width="10%"><center>操作</center></th>
 	    		</tr>
 	    		<tbody id="itemContainer">
-	    		<s:set name="numi" value="0" />
-	    		<s:set name="numj" value="1" />
-	            <s:iterator value="#request.allArticle" var="art">         
+	 
+	            <s:iterator value="#request.message" var="msg">         
 	    		<tr>
-	    			<td>${#numj }</td>
-	    			<td>${art.title}</td>
-	    			<td>${art.datetime}</td>
-	    			<td>${art.categoryid}</td>
-	    			<td>0</td>
-	    			<td>${art.hasread}</td>
-	    			<td><a href="javascript:void(0)" title="删除" id="delete" onclick="deleteArt(${art.id},${#numi})"><img src="admin/images/trash.gif"/></a>  
-	    			</td>
+	    			<td><a href="showArticleByUsername?username=${msg.send}">${msg.send}</a></td>
+	    			<td>${msg.neirong}</td>    
+	    			<td><a href="javascript:void(0)" title="删除" id="delete" onclick="deleteMessage(${msg.id})"><img src="admin/images/trash.gif"/></a></td>			
 	    		</tr>
-	    		<s:set name="numi" value="#numi+1" />
-	    		<s:set name="numj" value="#numj+1" />
 	    		</s:iterator>
 	    		</tbody>
 	    	</table>

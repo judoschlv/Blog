@@ -66,7 +66,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				$("#main").load("getAllComment");
 			});
 			$(".a5").click(function(){
-				$("#main").load("admin/charset.jsp");
+				$("#main").load("showAllClickrate");
 			});
 			$(".a6").click(function(){
 				$("#main").load("admin/allUser.jsp");
@@ -119,7 +119,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	  				<li class="li1"><a href="javascript:void(0)" class="a2">分类管理 </a></li>
 	  				<li class="li1"><a href="javascript:void(0)" class="a3">相册管理 </a></li>
 	  				<li class="li1"><a href="javascript:void(0)" class="a4">评论管理</a></li>
-	  				<li class="li1"><a href="javascript:void(0)" class="a5">个性设置</a></li>
+	  				<li class="li1"><a href="javascript:void(0)" class="a5">访问统计</a></li>
 	  				<li class="li1"><a href="javascript:void(0)" class="a6">用户管理</a></li>
 	  			</ul>
   			</div>

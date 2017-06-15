@@ -36,8 +36,5 @@
   	<location>/404.jsp</location> 
   </error-page>
   
-  <error-page>        
-  	<error-code>500</error-code>        
-  	<location>/404.jsp</location> 
-  </error-page>
+ 
 </web-app>

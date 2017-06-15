@@ -32,4 +32,13 @@ public interface ArticleDAO {
 	//按分类查询文章记录数
 	public int queryAllCountByCat(int categoryid);
 	
+	//根据用户名查询文章
+	public List queryByUser(String username);
+	
+	//根据ID查找是否推荐
+	public String queryHotByID(int id);
+	
+	//根据Hot查询所有文章
+	public List<Article> queryByhot();
+	
 }

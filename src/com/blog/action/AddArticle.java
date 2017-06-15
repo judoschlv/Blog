@@ -19,6 +19,13 @@ public class AddArticle extends ActionSupport{
 	private ArticleService articleService;
 	private CategoryService categoryService;
 	private String username;
+	private String hot;
+	public String getHot() {
+		return hot;
+	}
+	public void setHot(String hot) {
+		this.hot = hot;
+	}
 	public String getUsername() {
 		return username;
 	}
@@ -67,6 +74,8 @@ public class AddArticle extends ActionSupport{
 		article.setCategoryid(categoryid);
 		article.setHasread(0);
 		article.setUsername((String) request.getSession().getAttribute("username"));
+		article.setHot("默认");
+		article.setZan(0);
 		articleService.addArticle(article);
 		Category category=new Category();
 		category=categoryService.queryByIdCategory(categoryid);

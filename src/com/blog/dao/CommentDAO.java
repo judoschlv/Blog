@@ -18,4 +18,6 @@ public interface CommentDAO {
 	public int getCommentNum(int aid);
 	//获取所有文章的评论
 	public List<Comment> queryAll();
+	//通过username获得指定文章的评论
+	public List<Comment> queryByUsername(String username);
 }

@@ -20,6 +20,20 @@ public class Article {
 	private String datetime;
 	private int hasread;
 	private String username;
+	private String hot;
+	private int zan;
+	public int getZan() {
+		return zan;
+	}
+	public void setZan(int zan) {
+		this.zan = zan;
+	}
+	public String getHot() {
+		return hot;
+	}
+	public void setHot(String hot) {
+		this.hot = hot;
+	}
 	public int getId() {
 		return id;
 	}

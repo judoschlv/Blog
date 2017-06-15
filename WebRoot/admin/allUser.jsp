@@ -14,20 +14,30 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script language="javascript" src="<%=basePath%>js/jquery-1.10.1.min.js"></script>
 	<script language="javascript" src="<%=basePath%>js/jquery.form.js"></script>
 	<script>
-		function deleteCat(id,i){
+		function deleteUser(id){
 			$.ajax({
-				url:"deleteUser?username="+username,
+				url:"deleteUser?id="+id,
 				type:"post",
 				async: false,
 				success:function(){
 					alert("删除用户成功!");
-					$("#itemContainer tr:eq(" + i + ")").fadeOut(1000);
 				}
 			});
+				
+		}
+		function updateUser(id){
+			$.ajax({
+				url:"updateUser?id="+id,
+				type:"post",
+				async: false,
+				success:function(){
+					alert("更新用户权限成功");
+				}
+			});
+				
 		}
 	</script>
   </head>
-  
   <body>
      <div id="xjwz">
   		<span class="titletxt">用户管理</span>
@@ -35,20 +45,32 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	  		<div id="album_left">
 	  			<table class="table_category">
 	  				<tr>
-	  					<th>用户名称</th>
-	  					<th>操作</th>
+	  					<th><center><h4>用户名称</h4></center></th>
+	  					<th><center><h4>用户权限</h4></center></th>
+	  					<th><center><h4>用户财富</h4></center></th>
+	  					<th><center><h4>删除用户</h4></center></th>
+	  				   <th><center><h4>更改权限*</h4></center></th>
+	  				 
 	  				</tr>
+
 	  				<tbody id="itemContainer">
 			  		<s:iterator value="#request.userList" var="user">	
 						<tr>
-							<td>${user.username}</td>
+							<td><a href="showArticleByUsername?username=${user.username}">${user.username}</a></td>
+							<td>${user.type}</td>
+							<td>${user.gold} 金币</td>
 							<td>
-								<a href="javascript:void(0)" title="删除" id="delete" onclick="deleteCat(${user.username})"><img src="admin/images/trash.gif"/></a>  
+								<a href="javascript:void(0)" title="删除" id="delete" onclick="deleteUser(${user.id})"><img src="admin/images/trash.gif"/></a>  
+							</td>
+							<td>
+								<a href="javascript:void(0)" title="更改用户权限" id="update" onclick="updateUser(${user.id})"><img src="admin/images/wrench.gif"/></a>  
 							</td>
 						</tr>
 					</s:iterator>
 					</tbody>
+				
 				</table>
+					<h5>*博主→游客/游客→博主</h5>
 			</div>
 		  
 	   <div class="clear"></div>	   

@@ -23,7 +23,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   		<span class="titletxt">新建文章</span>
 	    <form action="addArticle" method="post" class="form1">
 	    	<div class="form_tit">
-	    	标题：<input type="text" name="title" class="text1" id="titleval"/>
+	    	标题：<input type="text" name="title" class="text1" id="titleval"/><br/><br/>
 	    	分类：<select name="categoryid">
 	    			<s:iterator value="#request.categoryList" var="category">
 							<option value="${category.id}">${category.name}</option>

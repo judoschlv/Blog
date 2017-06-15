@@ -87,7 +87,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </div>
             <div class="col-sm-4 menu-trigger-col">
                 <button class="menu-trigger black pull-right">
-                    <span class="active-page">欢迎  </span>
+                    <span class="active-page">欢迎  ${sessionScope.username}  </span>
                     <img src="images/menu-align-dark.png" alt="" class="icon-burger">
                     <img src="images/menu-close-dark.png" alt="" class="icon-cross">
                 </button>
@@ -153,183 +153,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     				<span class="article_title">[简讯]jQuery 1.7.2正式版发布！</span>
     				<span class="article_date">作者:panhao&nbsp;&nbsp;发布于：2017-05-19 00:00:00&nbsp;&nbsp; 归类于：<a href="showArticleByCat?categoryid=7">jquery</a></span>	
  					<div class="article_content"><p style="margin: 0px 0px 1.5em; padding: 0px; list-style: none; text-decoration: none; color: rgb(51, 51, 51); font-family: Helvetica, Tahoma, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 24px; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); ">jQuery 1.7.2正式版发布。该版本在1.7.1的基础上修复了大量的bug，并改进了部分功能。而相比于1.7.2 RC1，只修复了<a target="_blank" href="http://bugs.jquery.com/ticket/11469" style="cursor: pointer; color: rgb(0, 102, 204); text-decoration: none; ">一个bug</a>。</p><p style="margin: 0px 0px 1.5em; padding: 0px; list-style: none; text-decoration: none; color: rgb(51, 51, 51); font-family: Helvetica, Tahoma, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 24px; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-align: center; "><img alt="" src="http://cms.csdnimg.cn/articlev1/uploads/allimg/120323/0U94634X-0.jpg" style="vertical-align: middle; border: none; " /></p><p style="margin: 0px 0px 1.5em; padding: 0px; list-style: none; text-decoration: none; color: rgb(51, 51, 51); font-family: Helvetica, Tahoma, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 24px; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); ">值得注意的是：如果你正在使用jQuery Mobile，请使用最新的jQuery 1.7.2和jQuery Mobile 1.1这两个版本，因为之前的jQuery Mobile版本还基于jQuery core 1.7.1或更早的版本。 更多详情参看<a target="_blank" href="http://blog.jquery.com/2012/03/21/jquery-1-7-2-released/" style="cursor: pointer; color: rgb(0, 102, 204); text-decoration: none; ">jquery</a>。</p><p style="margin: 0px 0px 1.5em; padding: 0px; list-style: none; text-decoration: none; color: rgb(51, 51, 51); font-family: Helvetica, Tahoma, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 24px; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); ">下载地址：</p><ul style="margin: 0px 0px 1em 20px; padding: 0px; list-style: none; text-decoration: none; color: rgb(51, 51, 51); font-family: Helvetica, Tahoma, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 24px; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); "><li style="margin: 0px; padding: 0px; list-style: disc; text-decoration: none; "><a href="http://code.jquery.com/jquery-1.7.2.min.js" style="cursor: pointer; color: rgb(0, 102, 204); text-decoration: none; "><span style="color:#176092;">http://code.jquery.com/jquery-1.7.2.min.js</span></a><span>&nbsp;</span>(minified, production)</li><li style="margin: 0px; padding: 0px; list-style: disc; text-decoration: none; "><a href="http://code.jquery.com/jquery-1.7.2.js" style="cursor: pointer; color: rgb(0, 102, 204); text-decoration: none; "><span style="color:#176092;">http://code.jquery.com/jquery-1.7.2.js</span></a><span>&nbsp;</span>(unminified, debug)</li></ul>
- 						<center> <button type="submit" class="btn btn-primary btn-sm"><span>关注</span></button>
- 						  <button type="submit" class="btn btn-primary btn-sm"><span>点赞</span></button></center>
- 					</div>
- 					<div class="comment">
- 						<span class="txt_c">共5条评论</span>
-	    				<form action="addComment" method="POST" class="form_comment">
-	    					<textarea name="content" class="xheditor-mini"></textarea>
-	    					<div class="tijiao">
-		    					<input type="submit" value="提交" class="btn_comment" id="comment_sub"/>
-		    					<input type="reset" value="重置" class="btn_comment"/>
-		    				</div>
-		    				<input type="text" name="aid" class="comment_aid" value="10" style="visibility:hidden"/>
-	    				</form>
-	    				<div class="clear"></div>
-	    				
-	    			</div>
+ 						 					</div>
+ 					
 	    			
-	    			<div class="commentlist">
-	    				<div class="touxiang"><img src="http://localhost:8080/sfblog/images/duface.png"/></div>
-	    				<div class="comment_zw">
-	    					<span class="comment_username">暗夜</span>
-	    					<span class="comment_content">评论测试</span>
-	    				</div>
-	    				<div class="clear"></div>
-	    			</div>
 	    			
-	    			<div class="commentlist">
-	    				<div class="touxiang"><img src="http://localhost:8080/sfblog/images/duface.png"/></div>
-	    				<div class="comment_zw">
-	    					<span class="comment_username">ok</span>
-	    					<span class="comment_content">评论测试</span>
-	    				</div>
-	    				<div class="clear"></div>
-	    			</div>
-	    			
-	    			<div class="commentlist">
-	    				<div class="touxiang"><img src="http://localhost:8080/sfblog/images/duface.png"/></div>
-	    				<div class="comment_zw">
-	    					<span class="comment_username">测试员1</span>
-	    					<span class="comment_content">评论测试，写得很生动带感，不错哟，好评一个，哈哈</span>
-	    				</div>
-	    				<div class="clear"></div>
-	    			</div>
-	    			
-	    			<div class="commentlist">
-	    				<div class="touxiang"><img src="http://localhost:8080/sfblog/images/duface.png"/></div>
-	    				<div class="comment_zw">
-	    					<span class="comment_username">分隔</span>
-	    					<span class="comment_content">个非官方</span>
-	    				</div>
-	    				<div class="clear"></div>
-	    			</div>
-	    			
-	    			<div class="commentlist">
-	    				<div class="touxiang"><img src="http://localhost:8080/sfblog/images/duface.png"/></div>
-	    				<div class="comment_zw">
-	    					<span class="comment_username">77</span>
-	    					<span class="comment_content">77</span>
-	    				</div>
-	    				<div class="clear"></div>
-	    			</div>
-	    			
-    			</div>
-    			    
     		</div>		
     		
 
-			
-  				
-  				
-    		<div id="main_right">
-    			
-    		
-    			<div class="ck_right">
-    				<span class="title_right">文章分类</span>
-    				<ul>
-	    				
-	    					<li>
-	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
-	    						<a href="showArticleByCat?categoryid=3" class="link_a">java学习（4）</a>
-	    					</li>
-	    				
-	    					<li>
-	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
-	    						<a href="showArticleByCat?categoryid=4" class="link_a">随笔（0）</a>
-	    					</li>
-	    				
-	    					<li>
-	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
-	    						<a href="showArticleByCat?categoryid=5" class="link_a">关于工作（0）</a>
-	    					</li>
-	    				
-	    					<li>
-	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
-	    						<a href="showArticleByCat?categoryid=6" class="link_a">关于生活（0）</a>
-	    					</li>
-	    				
-	    					<li>
-	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
-	    						<a href="showArticleByCat?categoryid=7" class="link_a">jquery（1）</a>
-	    					</li>
-	    				
-	    					<li>
-	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
-	    						<a href="showArticleByCat?categoryid=8" class="link_a">前端那些事儿（2）</a>
-	    					</li>
-	    				
-	    					<li>
-	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
-	    						<a href="showArticleByCat?categoryid=9" class="link_a">博主介绍（2）</a>
-	    					</li>
-	    				
-    				</ul>
-    			</div>
-    			
-    			<div class="ck_right">
-    				<span class="title_right">博客相册</span>
-    				<ul>
-    						
-	    					<li>
-	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
-	    						<a href="showPhoto?albumname=none" class="link_a">none</a>
-	    					</li>
-	    				
-    				</ul>
-    			</div>    		
-    			
-    			<div class="ck_right">
-    				<span class="title_right">最新文章</span>
-    				<ul>
-    						
-	    					<li>
-	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
-	    						<a href="showArticle?id=11" class="link_a">让代码飞一会儿，超级有用的CSS编码工具集</a>
-	    					</li>
-	    					
-	    					<li>
-	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
-	    						<a href="showArticle?id=10" class="link_a">[简讯]jQuery 1.7.2正式版发布！</a>
-	    					</li>
-	    					
-	    					<li>
-	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
-	    						<a href="showArticle?id=9" class="link_a">10款最佳CSS/jQuery开源图片说明</a>
-	    					</li>
-	    					
-	    					<li>
-	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
-	    						<a href="showArticle?id=8" class="link_a">Hallo.js：一款所见即所得的Web编辑器</a>
-	    					</li>
-	    					
-	    					<li>
-	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
-	    						<a href="showArticle?id=7" class="link_a">Java EE 8愿望清单：缺少这些，Java EE将不会完美</a>
-	    					</li>
-	    					
-	    					<li>
-	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
-	    						<a href="showArticle?id=6" class="link_a">提升网站知名度的方法</a>
-	    					</li>
-	    					
-	    					<li>
-	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
-	    						<a href="showArticle?id=3" class="link_a">小雪</a>
-	    					</li>
-	    					
-	    					<li>
-	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
-	    						<a href="showArticle?id=2" class="link_a">小童</a>
-	    					</li>
-	    					
-	    					<li>
-	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
-	    						<a href="showArticle?id=1" class="link_a">小等</a>
-	    					</li>
-	    				
-    				</ul>
     			</div> 	
     		</div>
 
@@ -340,7 +170,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </div>
       
     <div class="clear"></div>
-    <div id="footer">Copyright Cynomys™; 2017 Blog, All Rights Reserved</div>
+   
 	<div id="tbox">
 		<a id="gotop" href="javascript:void(0)" title="回到顶部"></a>
 	</div>

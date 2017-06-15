@@ -22,4 +22,19 @@ public interface UserService {
     
     //根据用户名查找用户2
     public User queryById(String username);
+    
+    //按用户名查询ID2
+	public int queryByID2(String username);
+    
+    //根据ID查询用户
+    public User queryByI(int id);
+    
+    //更新用户属性
+    public void updateUser(User user);
+    
+    //根据用户名查找ID
+    public int queryID(String username);
+    
+    //根据ID查找type
+    public String queryTypeByID(int id);
 }

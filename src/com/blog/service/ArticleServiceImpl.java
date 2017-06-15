@@ -59,4 +59,22 @@ public class ArticleServiceImpl implements ArticleService{
 	public int queryAllCountByCat(int categoryid){
 		return articleDAO.queryAllCountByCat(categoryid);
 	}
+	
+	//按用户查询文章
+	@SuppressWarnings("unchecked")
+	public List<Article> queryByUser(String username){
+		List<Article> articleList=articleDAO.queryByUser(username);
+		return articleList;
+	}
+	
+	//根据ID查找是否推荐
+	public String queryHotByID(int id){
+		return articleDAO.queryHotByID(id);
+	}
+	
+	//根据Hot查询所有文章
+	public List<Article> queryByhot(){
+		return articleDAO.queryByhot();
+	}
+	
 }

@@ -43,6 +43,9 @@ public class AddComment extends ActionSupport{
 	@SuppressWarnings("static-access")
 	public String execute()throws Exception{
 		HttpServletRequest request=ServletActionContext.getRequest();
+		if((String) request.getSession().getAttribute("username")==null){
+			return "login";
+		}
 		Comment comment=new Comment();
 		comment.setAid(aid);
 		comment.setContent(content);

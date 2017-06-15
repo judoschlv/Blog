@@ -13,6 +13,14 @@ import com.opensymphony.xwork2.ActionSupport;
 
 @SuppressWarnings("serial")
 public class LoginAction extends ActionSupport{
+	private int id;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	private String username;
 	private String password;
 	private UserService userService;
@@ -54,6 +62,7 @@ public class LoginAction extends ActionSupport{
 		    session.put("type",userService.queryType(username));
 			session.put("username", username);
 			session.put("password", password);
+			session.put("id",userService.queryID(username));
 			return username;		
 		}else{request.setAttribute("url", "index.jsp");
 			request.setAttribute("info", "用户名或密码错误！");

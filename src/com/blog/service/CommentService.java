@@ -17,4 +17,6 @@ public interface CommentService {
 	public int getCommentNum(int aid);
 	//查询所有评论
 	public List<Comment> getAll();
+	//通过username获得指定文章的评论
+	public List<Comment> queryByUsername(String username);
 }

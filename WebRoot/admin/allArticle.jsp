@@ -29,7 +29,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				async: false,
 				success:function(){
 					alert("删除成功!");
-					$("#itemContainer tr:eq(" + i + ")").fadeOut(1000);
+				}
+			});
+		}
+		function updateHot(id){
+			$.ajax({
+				url:"updateHot?id="+id,
+				type:"post",
+				async: false,
+				success:function(){
+					alert("更新文章推荐成功");
 				}
 			});
 		}
@@ -43,26 +52,31 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    <div class="articleList">
 	    	<table class="table_article">
 	    		<tr>
-	    			<th  width="8%">序号</th>
-	    			<th  width="35%">标题</th>
-	    			<th  width="20%">发布时间</th>
-	    			<th  width="11%">所属分类</th>
-	    			<th  width="8%">作者</th>
-	    			<th  width="8%">点击量</th>
-	    			<th  width="10%">操作</th>
+	    			<th  width="8%"><center>推荐</center></th>
+	    			<th  width="35%"><center>标题</center></th>
+	    			<th  width="20%"><center>发布时间</center></th>
+	    			<th  width="5%"><center>分类</center></th>
+	    			<th  width="6%"><center>赞！</center></th>
+	    			<th  width="8%"><center>作者</center></th>
+	    			<th  width="8%"><center>点击量</center></th>
+	    			<th  width="5%"><center>操作</center></th>
+	    			<th  width="5%"><center>更改</center></th>
 	    		</tr>
 	    		<tbody id="itemContainer">
 	    		<s:set name="numi" value="0" />
 	    		<s:set name="numj" value="1" />
 	            <s:iterator value="#request.allArticle" var="art">         
 	    		<tr>
-	    			<td>${#numj }</td>
-	    			<td>${art.title}</td>
-	    			<td>${art.datetime}</td>
-	    			<td>${art.categoryid}</td>
-	    			<td>${art.username}</td>
-	    			<td>${art.hasread}</td>
-	    			<td><a href="javascript:void(0)" title="删除" id="delete" onclick="deleteArt(${art.id},${#numi})"><img src="admin/images/trash.gif"/></a>  
+	    			<td><center>${art.hot}</center></td>
+	    			<td><center><a href="showArticle?id=${art.id}" id="title_art">${art.title}</a></center></td>
+	    			<td><center>${art.datetime}</center></td>
+	    			<td><center>${art.categoryid}</center></td>
+	    			<td><center>${art.zan}</center></td>
+	    			<td><center>${art.username}</center></td>
+	    			<td><center>${art.hasread}</center></td>
+	    			<td><a href="javascript:void(0)" title="删除" id="delete" onclick="deleteArt(${art.id})"><img src="admin/images/trash.gif"/></a>  
+	    			</td>
+	    			<td><a href="javascript:void(0)" title="更改文章是否推荐" id="update" onclick="updateHot(${art.id})"><img src="admin/images/wrench.gif"/></a>
 	    			</td>
 	    		</tr>
 	    		<s:set name="numi" value="#numi+1" />

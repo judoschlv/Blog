@@ -87,7 +87,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </div>
             <div class="col-sm-4 menu-trigger-col">
                 <button class="menu-trigger black pull-right">
-                    <span class="active-page">欢迎  admin</span>
+                    <span class="active-page">欢迎  ${sessionScope.username}</span>
                     <img src="images/menu-align-dark.png" alt="" class="icon-burger">
                     <img src="images/menu-close-dark.png" alt="" class="icon-cross">
                 </button>
@@ -153,23 +153,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     				<span class="article_title">让代码飞一会儿，超级有用的CSS编码工具集</span>
     				<span class="article_date">作者:panhao&nbsp;&nbsp;发布于：2017-05-19 00:00:00&nbsp;&nbsp; 归类于：<a href="showArticleByCat?categoryid=8">前端那些事儿</a></span>	
  					<div class="article_content"><p style="margin: 0px 0px 1.5em; padding: 0px; list-style: none; text-decoration: none; color: rgb(51, 51, 51); font-family: Helvetica, Tahoma, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 24px; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); ">当你在开发某个网站或者应用时，找到适宜的工具绝对能帮助您节省大量的时间，本文，笔者收集了九款超级有用的CSS编码工具，借助这些优秀的工具能大大地减少开发时间，加快开发进度。</p><p style="margin: 0px 0px 1.5em; padding: 0px; list-style: none; text-decoration: none; color: rgb(51, 51, 51); font-family: Helvetica, Tahoma, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 24px; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); "><a href="http://purecss.io/" target="_blank" style="cursor: pointer; color: rgb(0, 102, 204); text-decoration: none; "><strong>Pure CSS</strong></a><br /></p><p style="margin: 0px 0px 1.5em; padding: 0px; list-style: none; text-decoration: none; color: rgb(51, 51, 51); font-family: Helvetica, Tahoma, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 24px; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-align: center; "><a href="http://cms.csdnimg.cn/article/201307/16/51e4ff6aac1ee.jpg" target="_blank" style="cursor: pointer; color: rgb(0, 102, 204); text-decoration: none; "><img src="http://cms.csdnimg.cn/article/201307/16/51e4ff6aac1ee.jpg" style="vertical-align: middle; border: none; width: 468.08562691131493px; height: 361px; " border="0" alt="" /></a><br /></p><p style="margin: 0px 0px 1.5em; padding: 0px; list-style: none; text-decoration: none; color: rgb(51, 51, 51); font-family: Helvetica, Tahoma, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 24px; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); ">Pure是CSS模块的组件，你可以在每个项目中将其作为基础组件使用。有了它，使CSS开发变得更加简单，整个框架看起来是如此的洁净与专业。</p><p style="margin: 0px 0px 1.5em; padding: 0px; list-style: none; text-decoration: none; color: rgb(51, 51, 51); font-family: Helvetica, Tahoma, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 24px; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); "><a href="http://valdelama.com/css-responsive-navigation" target="_blank" style="cursor: pointer; color: rgb(0, 102, 204); text-decoration: none; "><strong>CSS only responsive navigation</strong></a><br /></p><p style="margin: 0px 0px 1.5em; padding: 0px; list-style: none; text-decoration: none; color: rgb(51, 51, 51); font-family: Helvetica, Tahoma, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 24px; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-align: center; "><a href="http://cms.csdnimg.cn/article/201307/16/51e4fff32802f.jpg" target="_blank" style="cursor: pointer; color: rgb(0, 102, 204); text-decoration: none; "><img src="http://cms.csdnimg.cn/article/201307/16/51e4fff32802f.jpg" style="vertical-align: middle; border: none; width: 439.9380804953561px; height: 350px; " border="0" alt="" /></a><br /></p><p style="margin: 0px 0px 1.5em; padding: 0px; list-style: none; text-decoration: none; color: rgb(51, 51, 51); font-family: Helvetica, Tahoma, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 24px; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); ">如今，在Web开发领域，响应式设计非常受欢迎。这里你可以下载并且可重复使用响应式导航菜单，但前提是只能在CSS里。</p><p style="margin: 0px 0px 1.5em; padding: 0px; list-style: none; text-decoration: none; color: rgb(51, 51, 51); font-family: Helvetica, Tahoma, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 24px; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); "><a href="http://www.csstrashman.com/" target="_blank" style="cursor: pointer; color: rgb(0, 102, 204); text-decoration: none; "><strong>CSS Trashman</strong></a><br /></p><p style="margin: 0px 0px 1.5em; padding: 0px; list-style: none; text-decoration: none; color: rgb(51, 51, 51); font-family: Helvetica, Tahoma, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 24px; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-align: center; "><a href="http://cms.csdnimg.cn/article/201307/16/51e507874bea2.jpg" target="_blank" style="cursor: pointer; color: rgb(0, 102, 204); text-decoration: none; "><img src="http://cms.csdnimg.cn/article/201307/16/51e507874bea2.jpg" style="vertical-align: middle; border: none; width: 482.7654320987654px; height: 376px; " border="0" alt="" /></a></p><p style="margin: 0px 0px 1.5em; padding: 0px; list-style: none; text-decoration: none; color: rgb(51, 51, 51); font-family: Helvetica, Tahoma, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 24px; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); ">当你在为某个大型项目编码时想要使文件保存简洁且紧凑，这一点似乎很难做到。别担心，有了CSS Trashman工作起来就会变得更加简单。这款在线工具不仅能够检索网站，还能压缩样式，让你最终下载到最为洁净的CSS文件版本。</p><p style="margin: 0px 0px 1.5em; padding: 0px; list-style: none; text-decoration: none; color: rgb(51, 51, 51); font-family: Helvetica, Tahoma, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 24px; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); "><a href="https://github.com/jorgebastida/glue" target="_blank" style="cursor: pointer; color: rgb(0, 102, 204); text-decoration: none; "><strong>Glue</strong></a></p><p style="margin: 0px 0px 1.5em; padding: 0px; list-style: none; text-decoration: none; color: rgb(51, 51, 51); font-family: Helvetica, Tahoma, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 24px; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-align: center; "><a href="http://cms.csdnimg.cn/article/201307/16/51e500bceb9e5.jpg" target="_blank" style="cursor: pointer; color: rgb(0, 102, 204); text-decoration: none; "><img src="http://cms.csdnimg.cn/article/201307/16/51e500bceb9e5.jpg" style="vertical-align: middle; border: none; " border="0" alt="" /></a><br /></p><p style="margin: 0px 0px 1.5em; padding: 0px; list-style: none; text-decoration: none; color: rgb(51, 51, 51); font-family: Helvetica, Tahoma, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 24px; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); ">取代加载数十种图片，以更好的方式来加载一张大图，这种技术被称之为CSS sprites。Glue是一种常见的命令行工具用来将图片集转换成一个单独的文件。</p><p style="margin: 0px 0px 1.5em; padding: 0px; list-style: none; text-decoration: none; color: rgb(51, 51, 51); font-family: Helvetica, Tahoma, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 24px; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); "><a href="https://github.com/geuis/helium-css" target="_blank" style="cursor: pointer; color: rgb(0, 102, 204); text-decoration: none; "><strong>Helium CSS</strong></a></p><p style="margin: 0px 0px 1.5em; padding: 0px; list-style: none; text-decoration: none; color: rgb(51, 51, 51); font-family: Helvetica, Tahoma, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 24px; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-align: center; "><a href="http://cms.csdnimg.cn/article/201307/16/51e50115322d4.jpg" target="_blank" style="cursor: pointer; color: rgb(0, 102, 204); text-decoration: none; "><img src="http://cms.csdnimg.cn/article/201307/16/51e50115322d4.jpg" style="vertical-align: middle; border: none; " border="0" alt="" /></a><br /></p><p style="margin: 0px 0px 1.5em; padding: 0px; list-style: none; text-decoration: none; color: rgb(51, 51, 51); font-family: Helvetica, Tahoma, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 24px; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); ">Helium是一款基于JavaScript的开发工具，能够在浏览器中直接运行并从CSS文件中检测出未被使用的样式。<br /></p><p style="margin: 0px 0px 1.5em; padding: 0px; list-style: none; text-decoration: none; color: rgb(51, 51, 51); font-family: Helvetica, Tahoma, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 24px; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); "><a href="http://topcoat.io/" target="_blank" style="cursor: pointer; color: rgb(0, 102, 204); text-decoration: none; "><strong>Topcoat</strong></a><br /></p><p style="margin: 0px 0px 1.5em; padding: 0px; list-style: none; text-decoration: none; color: rgb(51, 51, 51); font-family: Helvetica, Tahoma, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 24px; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-align: center; "><a href="http://cms.csdnimg.cn/article/201307/16/51e5016656e3e.jpg" target="_blank" style="cursor: pointer; color: rgb(0, 102, 204); text-decoration: none; "><img src="http://cms.csdnimg.cn/article/201307/16/51e5016656e3e.jpg" style="vertical-align: middle; border: none; " border="0" alt="" /></a><br /></p><p style="margin: 0px 0px 1.5em; padding: 0px; list-style: none; text-decoration: none; color: rgb(51, 51, 51); font-family: Helvetica, Tahoma, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 24px; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); ">Topcoat是一套非常整洁且干净的CSS类库，专门用于各种表单元素：按钮、复选框、幻灯等。只需几分钟，让你的网站看起来更加出色。<br /></p><p style="margin: 0px 0px 1.5em; padding: 0px; list-style: none; text-decoration: none; color: rgb(51, 51, 51); font-family: Helvetica, Tahoma, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 24px; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); "><strong><a href="http://www.fitgrd.com/" target="_blank" style="cursor: pointer; color: rgb(0, 102, 204); text-decoration: none; ">.Fitgrd</a><br /></strong></p><p style="margin: 0px 0px 1.5em; padding: 0px; list-style: none; text-decoration: none; color: rgb(51, 51, 51); font-family: Helvetica, Tahoma, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 24px; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-align: center; "><a href="http://cms.csdnimg.cn/article/201307/16/51e50196f0dc4.jpg" target="_blank" style="cursor: pointer; color: rgb(0, 102, 204); text-decoration: none; "><img src="http://cms.csdnimg.cn/article/201307/16/51e50196f0dc4.jpg" style="vertical-align: middle; border: none; " border="0" alt="" /></a><br /></p><p style="margin: 0px 0px 1.5em; padding: 0px; list-style: none; text-decoration: none; color: rgb(51, 51, 51); font-family: Helvetica, Tahoma, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 24px; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); ">.Fitgrd是构建响应式网站的必备工具，除了创建网格，其他一切都由你决定，为你减少大量冗余代码。<br /></p><p style="margin: 0px 0px 1.5em; padding: 0px; list-style: none; text-decoration: none; color: rgb(51, 51, 51); font-family: Helvetica, Tahoma, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 24px; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); "><a href="http://necolas.github.io/normalize.css/" target="_blank" style="cursor: pointer; color: rgb(0, 102, 204); text-decoration: none; "><strong>Normalize.css</strong></a></p><p style="margin: 0px 0px 1.5em; padding: 0px; list-style: none; text-decoration: none; color: rgb(51, 51, 51); font-family: Helvetica, Tahoma, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 24px; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-align: center; "><a href="http://cms.csdnimg.cn/article/201307/16/51e501ce088a9.jpg" target="_blank" style="cursor: pointer; color: rgb(0, 102, 204); text-decoration: none; "><img src="http://cms.csdnimg.cn/article/201307/16/51e501ce088a9.jpg" style="vertical-align: middle; border: none; " border="0" alt="" /></a><br /></p><p style="margin: 0px 0px 1.5em; padding: 0px; list-style: none; text-decoration: none; color: rgb(51, 51, 51); font-family: Helvetica, Tahoma, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 24px; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); ">Normalize.css旨在用HTML5-ready来替代CSS重置。它使浏览器渲染出的元素更加一致并符合现代化标准。其常被用于一些主流的网站，包括Twitter、Bootstrap、Soundcloud、TweetDeck等等。</p><p style="margin: 0px 0px 1.5em; padding: 0px; list-style: none; text-decoration: none; color: rgb(51, 51, 51); font-family: Helvetica, Tahoma, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 24px; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); "><a href="http://bearcss.com/" target="_blank" style="cursor: pointer; color: rgb(0, 102, 204); text-decoration: none; "><strong>Bear CSS</strong></a><br /></p><p style="margin: 0px 0px 1.5em; padding: 0px; list-style: none; text-decoration: none; color: rgb(51, 51, 51); font-family: Helvetica, Tahoma, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 24px; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-align: center; "><a href="http://cms.csdnimg.cn/article/201307/16/51e5020009e4b.jpg" target="_blank" style="cursor: pointer; color: rgb(0, 102, 204); text-decoration: none; "><img src="http://cms.csdnimg.cn/article/201307/16/51e5020009e4b.jpg" style="vertical-align: middle; border: none; width: 467px; height: 352px; " border="0" alt="" /></a><br /></p><p style="margin: 0px 0px 1.5em; padding: 0px; list-style: none; text-decoration: none; color: rgb(51, 51, 51); font-family: Helvetica, Tahoma, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 24px; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); ">Bear CSS不仅美观，而且非常易用。只需简单创建HTML文档并将其上传。Bear CSS会自动生成基于HTML元素的CSS文件下载包。<br /></p><p style="margin: 0px 0px 1.5em; padding: 0px; list-style: none; text-decoration: none; color: rgb(51, 51, 51); font-family: Helvetica, Tahoma, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 24px; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); ">英文出自：<a href="http://www.catswhocode.com/blog/super-useful-tools-for-css-coding" target="_blank" style="cursor: pointer; color: rgb(0, 102, 204); text-decoration: none; ">Catswhocode</a></p>
- 						<center> <button type="submit" class="btn btn-primary btn-sm"><span>关注</span></button>
- 						  <button type="submit" class="btn btn-primary btn-sm"><span>点赞</span></button></center>
+ 						
  					</div>
- 					<div class="comment">
- 						<span class="txt_c">共0条评论</span>
-	    				<form action="addComment" method="POST" class="form_comment">
-	    					<textarea name="content" class="xheditor-mini"></textarea>
-	    					<div class="tijiao">
-		    					<input type="submit" value="提交" class="btn_comment" id="comment_sub"/>
-		    					<input type="reset" value="重置" class="btn_comment"/>
-		    				</div>
-		    				<input type="text" name="aid" class="comment_aid" value="11" style="visibility:hidden"/>
-	    				</form>
-	    				<div class="clear"></div>
-	    				
-	    			</div>
-	    			
+ 						    			
     			</div>
     			    
     		</div>		
@@ -178,115 +164,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			
   				
   				
-    		<div id="main_right">
-    			
-    		
-    			<div class="ck_right">
-    				<span class="title_right">文章分类</span>
-    				<ul>
-	    				
-	    					<li>
-	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
-	    						<a href="showArticleByCat?categoryid=3" class="link_a">java学习（4）</a>
-	    					</li>
-	    				
-	    					<li>
-	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
-	    						<a href="showArticleByCat?categoryid=4" class="link_a">随笔（0）</a>
-	    					</li>
-	    				
-	    					<li>
-	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
-	    						<a href="showArticleByCat?categoryid=5" class="link_a">关于工作（0）</a>
-	    					</li>
-	    				
-	    					<li>
-	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
-	    						<a href="showArticleByCat?categoryid=6" class="link_a">关于生活（0）</a>
-	    					</li>
-	    				
-	    					<li>
-	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
-	    						<a href="showArticleByCat?categoryid=7" class="link_a">jquery（1）</a>
-	    					</li>
-	    				
-	    					<li>
-	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
-	    						<a href="showArticleByCat?categoryid=8" class="link_a">前端那些事儿（2）</a>
-	    					</li>
-	    				
-	    					<li>
-	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
-	    						<a href="showArticleByCat?categoryid=9" class="link_a">博主介绍（2）</a>
-	    					</li>
-	    				
-    				</ul>
-    			</div>
-    			
-    			<div class="ck_right">
-    				<span class="title_right">博客相册</span>
-    				<ul>
-    						
-	    					<li>
-	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
-	    						<a href="showPhoto?albumname=none" class="link_a">none</a>
-	    					</li>
-	    				
-    				</ul>
-    			</div>    		
-    			
-    			<div class="ck_right">
-    				<span class="title_right">最新文章</span>
-    				<ul>
-    						
-	    					<li>
-	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
-	    						<a href="showArticle?id=11" class="link_a">让代码飞一会儿，超级有用的CSS编码工具集</a>
-	    					</li>
-	    					
-	    					<li>
-	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
-	    						<a href="showArticle?id=10" class="link_a">[简讯]jQuery 1.7.2正式版发布！</a>
-	    					</li>
-	    					
-	    					<li>
-	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
-	    						<a href="showArticle?id=9" class="link_a">10款最佳CSS/jQuery开源图片说明</a>
-	    					</li>
-	    					
-	    					<li>
-	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
-	    						<a href="showArticle?id=8" class="link_a">Hallo.js：一款所见即所得的Web编辑器</a>
-	    					</li>
-	    					
-	    					<li>
-	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
-	    						<a href="showArticle?id=7" class="link_a">Java EE 8愿望清单：缺少这些，Java EE将不会完美</a>
-	    					</li>
-	    					
-	    					<li>
-	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
-	    						<a href="showArticle?id=6" class="link_a">提升网站知名度的方法</a>
-	    					</li>
-	    					
-	    					<li>
-	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
-	    						<a href="showArticle?id=3" class="link_a">小雪</a>
-	    					</li>
-	    					
-	    					<li>
-	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
-	    						<a href="showArticle?id=2" class="link_a">小童</a>
-	    					</li>
-	    					
-	    					<li>
-	    						<img src="images/list.jpg" align="absmiddle" class="img_list"/>
-	    						<a href="showArticle?id=1" class="link_a">小等</a>
-	    					</li>
-	    				
-    				</ul>
-    			</div> 	
-    		</div>
+
 
 
     	</div>

@@ -51,6 +51,7 @@ public class AddUser<UserDao> extends ActionSupport{
 		user.setUsername(username);
 		user.setPassword(password);	
 		user.setType("游客");
+		user.setGold(0);
 		userService.registerUser(user);
 		HttpServletRequest request=ServletActionContext.getRequest();
 		if(userService.loginUser(user)){

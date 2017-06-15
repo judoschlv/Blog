@@ -48,19 +48,31 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script>
 		$(document).ready(function(){
 			var height_ck=$(window).height()-36;
-			$("#main").load("admin/main.jsp");
+			$("#main").load("manager/table.jsp");
 			$("#menu").css("height",height_ck);
 			$(".a1_1").click(function(){
 				$("#main").load("user/addArticle.jsp");
 			});
 			$(".a1_2").click(function(){
-				$("#main").load("showAllArticle");
+				$("#main").load("showAllArticleByUser");
+			});
+			$(".a3").click(function(){
+				$("#main").load("showFollower");
 			});
 			$(".a4").click(function(){
-				$("#main").load("getAllComment");
+				$("#main").load("showFollowing");
+			});
+			$(".a5").click(function(){
+				$("#main").load("getAllCommentByUser");
+			});
+			$(".a6").click(function(){
+				$("#main").load("showMessage");
+			});
+			$(".a7").click(function(){
+				$("#main").load("showCollection");
 			});
 			$(".a8").click(function(){
-				$("#main").load("user/main.jsp");
+				$("#main").load("manager/table.jsp");
 			});
 			$(".ul1 li a").click(function(){
 				$(this).toggleClass("li1_a");
@@ -86,7 +98,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </div>
             <div class="col-sm-4 menu-trigger-col" a href="index.jsp">
                 <button class="menu-trigger black pull-right" a href="index.jsp">
-                    <a font colour="black"  href="index.jsp">退出</font></a>
+                    <a font colour="black"  href="index.jsp">返回首页</a>
                     
                 </button>
             </div>
@@ -98,15 +110,36 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <div id="content">
   		<div id="menu">
+  		<div class="image" >
+                               <br/>
+                               <center> <img src="images/face-a.jpg"/></center>
+                               <br/>
+                               <center><a>${sessionScope.username}</a></center>
+                            </div>
   			<hr class="hr1">
   			<div class="link">
+  			 <s:if test="#session.type=='博主'" >
 	  			<ul class="ul1">
-	 				<li class="li1"><a href="javascript:void(0)" class="a8">首页</a></li>
+	 				<li class="li1"><a href="javascript:void(0)" class="a8">用户权限</a></li>
 	  				<li class="li1"><a href="javascript:void(0)" class="a1_1">新建文章 </a></li>
 	  				<li class="li1"><a href="javascript:void(0)" class="a1_2">文章管理 </a></li>
-	  				<li class="li1"><a href="javascript:void(0)" class="a4">评论管理</a></li>
-	  				<li class="li1"><a href="javascript:void(0)" class="a5">个性设置</a></li>
+	  				<li class="li1"><a href="javascript:void(0)" class="a3">我的关注 </a></li>
+	  				<li class="li1"><a href="javascript:void(0)" class="a4">我的粉丝</a></li>
+	  				<li class="li1"><a href="javascript:void(0)" class="a5">评论管理</a></li>
+	  				<li class="li1"><a href="javascript:void(0)" class="a6">留言管理</a></li>
+	  				<li class="li1"><a href="javascript:void(0)" class="a7">我的收藏</a></li>
 	  			</ul>
+	  			</s:if>
+	  			 <s:else>
+	  			 <ul class="ul1">
+	 				<li class="li1"><a href="javascript:void(0)" class="a8">用户权限</a></li>		
+	  				<li class="li1"><a href="javascript:void(0)" class="a3">我的关注 </a></li>
+	  				<li class="li1"><a href="javascript:void(0)" class="a4">我的粉丝</a></li>
+	  				<li class="li1"><a href="javascript:void(0)" class="a5">评论管理</a></li>
+	  				<li class="li1"><a href="javascript:void(0)" class="a6">留言管理</a></li>
+	  				<li class="li1"><a href="javascript:void(0)" class="a7">我的收藏</a></li>
+	  			</ul>
+	  			 </s:else>
   			</div>
   		</div>
   		<div id="main"></div>

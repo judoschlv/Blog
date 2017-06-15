@@ -9,8 +9,7 @@ $(document).ready(function(){
 			return false;
 		}
 		$(".form1").ajaxSubmit(function(){ 
-			alert("添加成功！");
-			$("#main").load("showAllArticle");			
+			alert("添加成功！");		
 		}); 
 		return false;
 	});			

@@ -70,7 +70,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <body class="home">
 
 <header class="row transparent white" data-spy="affix" data-offset-top="300" id="header">
-
     <div class="container">
         <div class="row top-header">
             <div class="col-sm-4 search-form-col">
@@ -98,46 +97,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div class="row menu-section">
         <div class="container">
             <div class="row">
-                <div class="col-sm-8 menu-col">
-                    <div class="row">
-                        <ul class="nav column-menu white-bg">
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">首页 <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="index.html">Home Option 1</a></li>
-                                    <li><a href="index2.html">Home Option 2</a></li>
-                                    <li><a href="index3.html">Home Option 3</a></li>
-                                    <li><a href="index4.html">Home Option 4</a></li>
-                                    <li><a href="index5.html">Home Option 5</a></li>
-                                    <li><a href="index6.html">Home Option 6</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="article.jsp">文章</a></li>
-                            <li><a href="category.jsp">分类</a></li>
-                           
-                            
-                        </ul>
-                        <ul class="nav column-menu black-bg">
-                            <li><a href="photo.jsp">相册</a></li>
-                            
-                            <li><a href="about.jsp">关于我</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-4 subscribe-col">
-                   
-                 
-                   <form action="loginAction" method="post" class="form-inline subscribe-form">
-                     <input type="text" name="username" class="form-control" placeholder="账号">                    
-                        <div class="form-group">
-                            
-                            <input type="password"  name="password" class="form-control" placeholder="密码">
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-sm"><span>登陆</span></button>
-                    </form>
-
-                    
-                </div>
+                
+          
             </div>
         </div>
     </div>
@@ -146,15 +107,29 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
     <div id="content">
   		
-  		
+  		 <s:action name="AddFollow" executeResult="true" ignoreContextParams="false"></s:action>	
     	<div id="main">
     		<div id="main_left">
 				<div class="art_zw">
     				<span class="article_title">${art.title}</span>
-    				<span class="article_date">作者:${art.username}&nbsp;&nbsp;发布于：${art.datetime}&nbsp;&nbsp; 归类于：<a href="showArticleByCat?categoryid=${art.categoryid}">${categoryName}</a></span>	
+    				<br/>
+    				<center><span>作者:<a href="showArticleByUsername?username=${art.username}">${art.username}</a></span></center>
+    				<form action="addFollow" method="post">
+    				<input type="text" name="username2" value="${art.username}"style="visibility:hidden">
+    				<center><input type="submit" value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关注${art.username}" style="border:none;background:url('images/follow.png') left top no-repeat;width:100px; height:22px;"></center>
+    				</form>
+    				<span class="article_date">发布于：${art.datetime}&nbsp;&nbsp; 归类于：<a href="showArticleByCat?categoryid=${art.categoryid}">${categoryName}</a>&nbsp;&nbsp;&nbsp;&nbsp;赞！${art.zan}&nbsp;&nbsp;&nbsp;&nbsp;已读人数:${art.hasread}</span>
+    				
  					<div class="article_content">${art.content}
- 						<center> <button type="submit" class="btn btn-primary btn-sm"><span>关注</span></button>
- 						  <button type="submit" class="btn btn-primary btn-sm"><span>点赞</span></button></center>
+ 					<form action="updateArticleZan" method="post">
+    				<input type="text" name="id" value="${art.id}"style="visibility:hidden"><br/>
+    				<center><input type="submit"  value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;赞！" style="border:none;background:url('images/good.png') left top no-repeat;width:60px; height:22px;" /></center>
+    				</form>
+    				<form action="addCollection" method="post">
+    				<input type="text" name="aid" value="${art.id}"style="visibility:hidden"><br/>
+    				<center><input type="submit"  value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;收藏" style="border:none;background:url('images/collection.png') left top no-repeat;width:60px; height:22px;" /></center>
+    				</form>
+    				
  					</div>
  					<div class="comment">
  						<span class="txt_c">共${commentNum}条评论</span>

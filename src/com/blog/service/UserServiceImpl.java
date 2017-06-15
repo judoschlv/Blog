@@ -51,6 +51,10 @@ public class UserServiceImpl implements UserService{
 		return userDAO.queryByID(username).getType();
 	}
 
+	//按用户名查询用户2
+	public int queryByID2(String username){
+		return userDAO.queryByID2(username);
+	}
 	//删除用户
 	public void deleteUser(User user){
 		userDAO.deleteUser(user);
@@ -60,4 +64,22 @@ public class UserServiceImpl implements UserService{
     	return userDAO.queryByID(username);
     }
 	
+    public User queryByI(int id){
+    	return userDAO.queryByI(id);
+    }
+    
+    //更新用户属性
+    public void updateUser(User user){
+        userDAO.updateUser(user);
+    }
+    
+    //根据用户名查找ID
+    public int queryID(String username){
+    	return userDAO.queryByID(username).getId();
+    }
+
+    //根据ID查找type
+    public String queryTypeByID(int id){
+    	return userDAO.queryTypeByID(id);
+    }
 }
